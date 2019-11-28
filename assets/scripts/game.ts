@@ -57,7 +57,7 @@ export default class Game extends cc.Component {
         // 为星星设置一个随机位置
         newStar.setPosition(this.getNewStarPosition());
         // 在星星组件上暂存 Game 对象的引用
-        newStar.getComponent('star').game = this;
+        newStar.getComponent('Star').game = this;
         // 重置计时器，根据消失时间范围随机取一个值
         this.starDuration = this.minStarDuration + Math.random() * (this.maxStarDuration - this.minStarDuration);
         this.timer = 0;
@@ -69,7 +69,7 @@ export default class Game extends cc.Component {
         const randX = (Math.random() - 0.5) * 2 * maxX;
 
         // 根据地平面位置和主角跳跃高度，随机得到一个星星的 y 坐标
-        const randY = this.groundY + Math.random() * this.player.getComponent('player').jumpHeight + 50;
+        const randY = this.groundY + Math.random() * this.player.getComponent('Player').jumpHeight + 50;
 
         // 返回星星坐标
         return cc.v2(randX, randY);
@@ -86,6 +86,6 @@ export default class Game extends cc.Component {
     gameOver() {
         // 停止 player 节点的跳跃动作
         this.player.stopAllActions();
-        cc.director.loadScene('menu');
+        cc.director.loadScene('MenuScene');
     }
 }

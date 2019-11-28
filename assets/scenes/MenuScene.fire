@@ -328,7 +328,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn_play",
+    "_name": "playButton",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
